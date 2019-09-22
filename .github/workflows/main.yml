@@ -18,4 +18,4 @@ jobs:
             pip install --no-cache-dir ansible
         - name: Install Hass.io
           run: |
-            ansible-playbook --connection=local --inventory 127.0.0.1, .github/playbook.yml
+            ansible-playbook -i .github/ansible_hosts .github/playbook.yml
