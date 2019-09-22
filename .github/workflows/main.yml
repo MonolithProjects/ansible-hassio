@@ -16,6 +16,6 @@ jobs:
         - name: Install Ansible
           run: |
             pip install --no-cache-dir ansible
-        - name: Install Ansible
+        - name: Install Hass.io
           run: |
-            ansible-playbook -connection=local --inventory 127.0.0.1, .github/playbook.yml
+            ansible-playbook --connection=local --inventory 127.0.0.1, .github/playbook.yml
