@@ -8,4 +8,4 @@
     - privileged_mode: False   #Default
     - version: latest   #Default
   tasks:
-      import_tasks: tasks/main.yml
+      - import_tasks: tasks/main.yml
