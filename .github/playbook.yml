@@ -7,3 +7,4 @@
     - supervisor_share: "/usr/share/hassio"   #Default
     - privileged_mode: False   #Default
     - version: latest   #Default
+  import_tasks: ../tasks/main.yml
