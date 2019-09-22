@@ -19,3 +19,8 @@ jobs:
         - name: Install Hass.io
           run: |
             ansible-playbook -i .github/ansible_hosts .github/playbook.yml
+        - name: Simple check
+          run: |
+            RESULT=`docker ps |grep hassio`
+            echo "$RESULT"
+            if [ -z "$RESULT" ]; then echo "Hassio is not running."; exit 1 ;fi
