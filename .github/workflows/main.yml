@@ -10,7 +10,7 @@ on:
 
 jobs:
     build:
-        runs-on: ubuntu-latest
+        runs-on: centos-latest
         steps:
         - uses: actions/checkout@master
         - name: Install Ansible
