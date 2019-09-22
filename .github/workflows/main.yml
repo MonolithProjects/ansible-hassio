@@ -15,7 +15,7 @@ jobs:
         - uses: actions/checkout@master
         - name: Install Ansible
           run: |
-            pip install --no-cache-dir ansible
+            pip install --no-cache-dir ansible docker-py
         - name: Install Hass.io
           run: |
             ansible-playbook  --connection=local -i .github/hosts.ini -e 'ansible_python_interpreter=/usr/bin/python3' .github/playbook.yml
