@@ -1,6 +1,5 @@
 ---
-- name: Install Hassio
-  hosts: localhost  
+- name: Install Hassio  
   become: yes
   gather_facts: no
   vars:

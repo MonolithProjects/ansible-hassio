@@ -18,4 +18,4 @@ jobs:
             pip install --no-cache-dir ansible
         - name: Install Ansible
           run: |
-            ansible-playbook .github/playbook.yml
+            ansible-playbook -connection=local --inventory 127.0.0.1, .github/playbook.yml
