@@ -15,8 +15,8 @@ jobs:
         - uses: actions/checkout@master
         - name: Install Prereqs
           run: |
-            pip install --no-cache-dir ansible docker==3.7.3
-            python3 -c "import docker"
+            pip install --no-cache-dir ansible docker
+            python -c "import docker"
         - name: Install Hass.io
           run: |
             ansible-playbook  --connection=local -i .github/hosts.ini -e 'ansible_python_interpreter=/usr/bin/python3' .github/playbook.yml
