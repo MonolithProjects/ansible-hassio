@@ -16,7 +16,7 @@ jobs:
         - name: Install Prereqs
           run: |
             pip install --no-cache-dir ansible
-            pip3 install --no-cache-dir ansible docker
+            pip3 install --no-cache-dir docker
         - name: Install Hass.io
           run: |
             ansible-playbook  --connection=local -i .github/hosts.ini -e 'ansible_python_interpreter=/usr/bin/python3' .github/playbook.yml
