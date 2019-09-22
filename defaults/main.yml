@@ -1,0 +1,7 @@
+---
+supervisor_share: "/usr/share/hassio" 
+privileged_mode: False
+version: latest
+
+# TODO:
+# architecture:
