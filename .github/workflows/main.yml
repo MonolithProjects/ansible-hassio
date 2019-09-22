@@ -10,7 +10,7 @@ on:
 
 jobs:
     build:
-        runs-on: ubuntu-16.04
+        runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@master
         - name: Install Ansible
@@ -18,7 +18,7 @@ jobs:
             pip install --no-cache-dir ansible docker
         - name: Install Hass.io
           run: |
-            ansible-playbook  --connection=local -i .github/hosts.ini -e 'ansible_python_interpreter=/usr/bin/python3' .github/playbook.yml
+            ansible-playbook  --connection=local -i .github/hosts.ini .github/playbook.yml
         - name: Simple check
           run: |
             docker-compose --version
