@@ -21,6 +21,7 @@ jobs:
             ansible-playbook  -i .github/hosts.ini .github/playbook.yml
         - name: Simple check
           run: |
+            docker ps
             RESULT=`docker ps |grep hassio`
             echo "$RESULT"
             if [ -z "$RESULT" ]; then echo "Hassio is not running."; exit 1 ;fi
