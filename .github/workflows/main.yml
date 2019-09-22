@@ -15,7 +15,7 @@ jobs:
         - uses: actions/checkout@master
         - name: Install Ansible
           run: |
-          pip install --no-cache-dir ansible
+            pip install --no-cache-dir ansible
         - name: Install Ansible
           run: |
           ansible-playbook .github/playbook.yml
