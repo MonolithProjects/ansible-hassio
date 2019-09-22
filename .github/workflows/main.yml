@@ -15,10 +15,11 @@ jobs:
         - uses: actions/checkout@master
         - name: Install Ansible
           run: |
-            pip install --no-cache-dir ansible docker
+            pip install --no-cache-dir ansible
         - name: Install Hass.io
           run: |
-            ansible-playbook  --connection=local -i .github/hosts.ini .github/playbook.yml
+            pip install docker
+            ansible-playbook  --connection=local -i .github/hosts.ini -e 'ansible_python_interpreter=/usr/bin/python3' .github/playbook.yml
         - name: Simple check
           run: |
             docker-compose --version
