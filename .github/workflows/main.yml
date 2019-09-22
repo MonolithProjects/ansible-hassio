@@ -13,17 +13,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@master
-        - name: Install Ansible
+        - name: Install Prereqs
           run: |
-            curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-            sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-            sudo apt-get update
-            sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
-            sudo rm /usr/local/bin/docker-compose
-            curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compose-`uname -s`-`uname -m` > docker-compose
-            chmod +x docker-compose
-            sudo mv docker-compose /usr/local/bin
-
+            pip install --no-cache-dir ansible docker
+            python3 -c "import docker"
         - name: Install Hass.io
           run: |
             ansible-playbook  --connection=local -i .github/hosts.ini -e 'ansible_python_interpreter=/usr/bin/python3' .github/playbook.yml
