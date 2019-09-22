@@ -18,7 +18,7 @@ jobs:
             pip install --no-cache-dir ansible
         - name: Install Hass.io
           run: |
-            ansible-playbook .github/playbook.yml
+            ansible-playbook  -i ./github/hosts.ini .github/playbook.yml
         - name: Simple check
           run: |
             RESULT=`docker ps |grep hassio`
