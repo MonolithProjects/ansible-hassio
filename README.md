@@ -1,5 +1,7 @@
 [![](https://github.com/MonolithProjects/ansible-hassio/workflows/Test%20build/badge.svg)](https://github.com/MonolithProjects/ansible-hassio/actions)  
 
+! WIP
+
 This Ansible role installs Hass.io. Hass.io is an operating system that will take care of installing and updating Home Assistant, is managed from the Home Assistant UI, allows creating/restoring snapshots of your configuration and can easily be extended using Hass.io add-ons including Google Assistant and Let’s Encrypt.
 
 ### Playbook example:
