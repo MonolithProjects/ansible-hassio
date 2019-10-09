@@ -10,7 +10,10 @@ on:
 
 jobs:
     build:
-        runs-on: ubuntu-latest
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                os: [centos-latest, ubuntu-latest]
         steps:
         - uses: actions/checkout@master
         - name: Install Prereqs
