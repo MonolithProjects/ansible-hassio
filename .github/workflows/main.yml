@@ -15,9 +15,8 @@ jobs:
         - uses: actions/checkout@master
         - name: Install Prereqs
           run: |
-            pip list
-            pip3 list
-            pip3 install --no-cache-dir docker
+            pip uninstall ansible
+            pip3 install --no-cache-dir ansible docker
             echo "Python2 vvvv"
             pip list
             echo "Python3 vvvv"
