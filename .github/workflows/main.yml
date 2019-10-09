@@ -17,7 +17,7 @@ jobs:
           run: |
             pip list
             pip3 list
-            pip install --no-cache-dir ansible docker requests
+            pip install --no-cache-dir ansible docker docker-py requests
         - name: Install Hass.io
           run: |
             ansible-playbook  --connection=local -i .github/hosts.ini -e 'ansible_python_interpreter=/usr/bin/python3' .github/playbook.yml
