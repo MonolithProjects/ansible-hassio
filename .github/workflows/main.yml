@@ -17,7 +17,7 @@ jobs:
           run: |
             pip list
             pip3 list
-            pip3 install --no-cache-dir ansible docker docker-py
+            pip3 install --no-cache-dir ansible docker
             echo "Python2 vvvv"
             pip list
             echo "Python3 vvvv"
