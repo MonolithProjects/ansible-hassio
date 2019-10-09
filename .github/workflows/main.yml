@@ -15,7 +15,7 @@ jobs:
         - uses: actions/checkout@master
         - name: Install Prereqs
           run: |
-            # pip uninstall ansible
+            pip uninstall ansible
             pip install --no-cache-dir ansible docker requests
         - name: Install Hass.io
           run: |
