@@ -10,12 +10,12 @@ on:
 
 jobs:
     build:
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-16.04
         steps:
         - uses: actions/checkout@master
         - name: Install Prereqs
           run: |
-            pip2.7 install --no-cache-dir ansible docker requests
+            pip install --no-cache-dir ansible docker requests
         - name: Install Hass.io
           run: |
             ansible-playbook  --connection=local -i .github/hosts.ini -e 'ansible_python_interpreter=/usr/bin/python3' .github/playbook.yml
