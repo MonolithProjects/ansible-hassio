@@ -15,6 +15,8 @@ jobs:
         - uses: actions/checkout@master
         - name: Install Prereqs
           run: |
+            apt-get update
+            apt-get install python3-setuptools -y
             pip uninstall ansible
             pip3 install --no-cache-dir ansible docker
             echo "Python2 vvvv"
