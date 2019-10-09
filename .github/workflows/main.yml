@@ -15,10 +15,10 @@ jobs:
         - uses: actions/checkout@master
         - name: Install Prereqs
           run: |
-            pip install --no-cache-dir ansible docker requests
+            pip3 install --no-cache-dir ansible docker requests
         - name: Install Hass.io
           run: |
-            ansible-playbook  --connection=local -i .github/hosts.ini .github/playbook.yml
+            ansible-playbook  --connection=local -i .github/hosts.ini -e 'ansible_python_interpreter=/usr/bin/python3' .github/playbook.yml
         - name: Simple check
           run: |
             docker-compose --version
