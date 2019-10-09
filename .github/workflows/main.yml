@@ -16,15 +16,12 @@ jobs:
                 os: [ubuntu-16.04, ubuntu-18.04]
         steps:
         - uses: actions/checkout@master
-        # - name: Install Prereqs
-        #   run: |
-        #     pip install --no-cache-dir docker-py
-        #     echo "Python3 vvvv"
-        #     pip list
-        - name: Install Hass.io
+        - name: Install Prereqs
           run: |
             sudo pip3 install --no-cache-dir docker
-            ansible-playbook  --connection=local -i .github/hosts.ini -e 'ansible_python_interpreter=/usr/bin/python3' .github/playbook.yml
+        - name: Install Hass.io
+          run: |
+            ansible-playbook  -vvv --connection=local -i .github/hosts.ini -e 'ansible_python_interpreter=/usr/bin/python3' .github/playbook.yml
         - name: Simple check
           run: |
             docker-compose --version
