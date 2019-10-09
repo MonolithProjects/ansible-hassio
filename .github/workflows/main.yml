@@ -15,7 +15,7 @@ jobs:
         - uses: actions/checkout@master
         - name: Install Prereqs
           run: |
-            pip list | egrep 'docker|docker-py|requests'
+            pip list
             pip install --no-cache-dir ansible docker
         - name: Install Hass.io
           run: |
