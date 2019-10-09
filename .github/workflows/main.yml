@@ -18,7 +18,7 @@ jobs:
         - uses: actions/checkout@master
         - name: Install Prereqs
           run: |
-            pip3 install --no-cache-dir docker
+            pip3 install --no-cache-dir docker-py
             echo "Python3 vvvv"
             pip3 list
         - name: Install Hass.io
