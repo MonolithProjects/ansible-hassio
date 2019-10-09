@@ -15,6 +15,8 @@ jobs:
         - uses: actions/checkout@master
         - name: Install Prereqs
           run: |
+            pip3 list
+            pip3 install --upgrade pip3
             pip3 install --no-cache-dir ansible docker requests
         - name: Install Hass.io
           run: |
