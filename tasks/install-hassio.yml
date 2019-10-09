@@ -3,7 +3,7 @@
   docker_container:
     name: hassio_supervisor
     image: "homeassistant/amd64-hassio-supervisor:{{ version }}"
-    state: present
+    state: started
     privileged: "{{ privileged_mode }}"
     restart: no
     restart_policy: unless-stopped
