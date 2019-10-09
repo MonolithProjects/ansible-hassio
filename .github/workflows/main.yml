@@ -25,6 +25,7 @@ jobs:
         - name: Simple check
           run: |
             docker-compose --version
+            docker image list
             docker ps -a
             sleep 10
             docker ps -a
