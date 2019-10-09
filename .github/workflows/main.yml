@@ -10,12 +10,13 @@ on:
 
 jobs:
     build:
-        runs-on: docker
+        runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@master
         - name: Install Prereqs
           run: |
             pip list
+            pip3 list
             pip install --no-cache-dir ansible docker requests
         - name: Install Hass.io
           run: |
