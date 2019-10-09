@@ -13,10 +13,12 @@ jobs:
         runs-on: ubuntu-16.04
         steps:
         - uses: actions/checkout@master
+        - name: Upgrade pip
+          run: |
+            pip install --upgrade pip
         - name: Install Prereqs
           run: |
             pip list
-            pip install --upgrade pip
             pip install --no-cache-dir ansible docker requests
         - name: Install Hass.io
           run: |
