@@ -25,10 +25,7 @@ jobs:
         - name: Simple check
           run: |
             docker-compose --version
-            docker image list
-            docker ps -a
-            sleep 10
-            docker ps -a
+            docker --version
             RESULT=`docker ps |grep hassio`
             echo "$RESULT"
-            if [ -z "$RESULT" ]; then echo "Hassio is not running."; exit 1 ;fi
+            if [ -z "$RESULT" ]; then echo "ERROR: Hassio is not running."; exit 1 ;fi
