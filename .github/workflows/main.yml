@@ -26,6 +26,8 @@ jobs:
           run: |
             docker-compose --version
             docker ps -a
+            sleep 10
+            docker ps -a
             RESULT=`docker ps |grep hassio`
             echo "$RESULT"
             if [ -z "$RESULT" ]; then echo "Hassio is not running."; exit 1 ;fi
