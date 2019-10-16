@@ -26,7 +26,7 @@ galaxy_info:
   galaxy_tags:
     - hassio
     - hass
-    - home
+    - homeassistant
     - automation
     - web
     - system
