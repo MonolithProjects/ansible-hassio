@@ -1,0 +1,8 @@
+---
+- name: Converge
+  hosts: all
+  user: root
+  gather_facts: no
+  become: yes
+  roles:
+      - ansible-hassio

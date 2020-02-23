@@ -1,0 +1,28 @@
+---
+dependency:
+  name: galaxy
+  options:
+    role-file: requirements.yml
+driver:
+  name: docker
+lint: |
+  yamllint .
+platforms:
+  - name: docker
+    image: docker:dind
+    pre_build_image: yes
+provisioner:
+  name: ansible
+  playbooks:
+      prepare: ../resources/prepare.yml
+      converge: ../resources/playbook.yml
+  lint:
+    name: ansible-lint
+  inventory:
+    host_vars:
+      fedora:
+        ansible_python_interpreter: /usr/bin/python3
+verifier:
+  name: ansible
+scenario:
+  name: default
