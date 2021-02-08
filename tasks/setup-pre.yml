@@ -8,6 +8,12 @@
       - python-docker
     state: present
 
+- name: "Add {{ ansible_user }} to docker group"
+  ansible.builtin.user:
+    name: "{{ ansible_user }}"
+    groups: docker
+    append: true
+
 - name: Copy docker daemon config
   ansible.builtin.copy:
     src: docker_daemon.json
