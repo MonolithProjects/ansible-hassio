@@ -1,0 +1,15 @@
+[Unit]
+Description=Hass.io supervisor
+Requires=docker.service
+After=docker.service dbus.socket
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5s
+ExecStartPre=-{{ docker_bin }} stop hassio_supervisor
+ExecStart={{ hassio_bin }}
+ExecStop=-{{ docker_bin }} stop hassio_supervisor
+
+[Install]
+WantedBy=multi-user.target

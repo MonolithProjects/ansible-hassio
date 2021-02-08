@@ -1,7 +1,15 @@
 ---
-supervisor_share: "/usr/share/hassio" 
+
+supervisor: "homeassistant/amd64-hassio-supervisor"
+machine: "qemux86-64"
+supervisor_share: "/usr/share/hassio"
 privileged_mode: False
-version: latest
+hassio_version: latest
+hassio_config: "/etc/hassio.json"
+hassio_bin: "/usr/sbin/hassio-supervisor"
+docker_bin: "/usr/bin/docker"
+
+
 repositories:
   - https://github.com/hassio-addons/repository
   - https://github.com/helto4real/hassio-add-ons

@@ -1,0 +1,36 @@
+---
+- name: Ensure dependencies are installed.
+  apt:
+    name:
+      - curl
+      - jq
+      - network-manager
+      - python-docker
+    state: present
+
+- name: Copy docker daemon config
+  ansible.builtin.copy:
+    src: docker_daemon.json
+    dest: /etc/docker/daemon.json
+  notify: Restart docker
+
+- name: Copy network manager config
+  ansible.builtin.copy:
+    src: NetworkManager.conf
+    dest: /etc/NetworkManager/NetworkManager.conf
+  notify: Restart networkmanager
+
+- name: Create config Dir
+  ansible.builtin.file:
+    path: "{{ supervisor_share }}"
+    state: directory
+
+- name: Create apparmor Dir
+  ansible.builtin.file:
+    path: "{{ supervisor_share }}/apparmor"
+    state: directory
+
+- name: Copy hassio.json
+  ansible.builtin.template:
+    src: hassio.json.j2
+    dest: /etc/hassio.json
