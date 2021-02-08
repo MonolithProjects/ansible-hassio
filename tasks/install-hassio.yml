@@ -1,4 +1,10 @@
 ---
+- name: Ensure dependencies are installed.
+  apt:
+    name:
+      - python-docker
+    state: present
+
 - name: Run Hass.io
   docker_container:
     name: hassio_supervisor
